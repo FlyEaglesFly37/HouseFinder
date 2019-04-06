@@ -1,0 +1,30 @@
+{
+  "name": "housefinder",
+  "version": "1.0.0",
+  "description": "House Finder is an application that will easily allow it's users to keep track of different homes while \"house hunting\".",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlyEaglesFly37/HouseFinder.git"
+  },
+  "author": "Austin Fowler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlyEaglesFly37/HouseFinder/issues"
+  },
+  "homepage": "https://github.com/FlyEaglesFly37/HouseFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.22"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
