@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const House = require('../../models/House');
-module.exports = router;
 
 router.get('/', (req, res) => {
     House.find()
-        .then(house => res.json(house))
+        .then(houses => res.json(houses));
 });
 
 router.post('/', (req, res) => {
@@ -29,3 +28,5 @@ router.delete('/', (req, res) => {
         })))
         .catch(error => res.status(404).json({success: false}));
 });
+
+module.exports = router;
