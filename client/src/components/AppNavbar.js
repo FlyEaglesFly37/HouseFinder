@@ -14,7 +14,7 @@ export default class AppNavbar extends Component {
 
     render() {
         return (
-            <div>Sup bitch ass hoe</div>
+            <div></div>
         )
     }
 
