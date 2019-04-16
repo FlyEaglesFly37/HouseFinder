@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
+import { Container, ListGroup, ListGroupItem, Button, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/houseActions';
@@ -24,17 +24,21 @@ class HouseList extends Component {
             <Container>
                 <ListGroup>
                     <TransitionGroup className="house-list">
-                        {houses.map(({ _id, street_address, city, state }) => (
+                        {houses.map(({ _id, street_address, city, state, zip_code }) => (
                             <CSSTransition key={_id} timeout={500} >
                                 <ListGroupItem>
                                         <Button
                                             className="remove-btn"
                                             color="danger"
                                             size="sm"
-                                            onClick={this.onDeleteClick.bind(this, _id)}>&times;</Button>
-                                        {street_address},
-                                        {city},
-                                        {state}
+                                            onClick={this.onDeleteClick.bind(this, _id.toString())}>&times;</Button>
+                                            <a href="/">
+                                            <Card className="text-center">
+                                                <CardBody>
+                                                    <CardTitle>{street_address}</CardTitle>
+                                                    <CardSubtitle>{city}, {state} {zip_code}</CardSubtitle>
+                                                </CardBody>
+                                            </Card></a>
                                 </ListGroupItem>
                             </CSSTransition>
                         ))}

@@ -14,7 +14,11 @@ export default class AppNavbar extends Component {
 
     render() {
         return (
-            <div></div>
+            <div>
+                <Navbar color="dark" dark className="mb-5">
+                    <NavbarBrand id="brand">House Finder</NavbarBrand>
+                </Navbar>
+            </div>
         )
     }
 

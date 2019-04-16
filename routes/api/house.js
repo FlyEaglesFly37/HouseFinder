@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
     newHouse.save().then(house => res.json(house));
 });
 
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
     House.findById(req.params.id)
         .then(house => house.remove().then(() => res.json({
             success: true
