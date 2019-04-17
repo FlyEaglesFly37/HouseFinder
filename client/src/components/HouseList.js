@@ -32,7 +32,7 @@ class HouseList extends Component {
                                             color="danger"
                                             size="sm"
                                             onClick={this.onDeleteClick.bind(this, _id.toString())}>&times;</Button>
-                                            <a href="/">
+                                            <a href="/details">
                                             <Card className="text-center">
                                                 <CardBody>
                                                     <CardTitle>{street_address}</CardTitle>
@@ -45,6 +45,7 @@ class HouseList extends Component {
                     </TransitionGroup>
                 </ListGroup>
             </Container>
+
             </div>
         )
     }
