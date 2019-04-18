@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from './types';
+import { GET_ITEMS, GET_ITEM, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from './types';
 
 export const getItems = () => dispatch => {
     dispatch(setItemsLoading());
@@ -10,6 +10,15 @@ export const getItems = () => dispatch => {
             payload: res.data
         }))
 };
+
+export const getItem = (id) => dispatch => {
+    axios
+        .get(`api/house/${id}`)
+        .then(res => dispatch({
+            type: GET_ITEM,
+            payload: id,
+        }))
+}
 
 export const deleteItem = (id) => dispatch => {
     axios

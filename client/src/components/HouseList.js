@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Link, NavLink } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/houseActions';
@@ -32,13 +33,13 @@ class HouseList extends Component {
                                             color="danger"
                                             size="sm"
                                             onClick={this.onDeleteClick.bind(this, _id.toString())}>&times;</Button>
-                                            <a href="/details">
+                                            <Link to={"/" + _id} >
                                             <Card className="text-center">
                                                 <CardBody>
                                                     <CardTitle>{street_address}</CardTitle>
                                                     <CardSubtitle>{city}, {state} {zip_code}</CardSubtitle>
                                                 </CardBody>
-                                            </Card></a>
+                                            </Card></Link>
                                 </ListGroupItem>
                             </CSSTransition>
                         ))}

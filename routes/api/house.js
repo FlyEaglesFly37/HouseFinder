@@ -29,4 +29,9 @@ router.delete('/:id', (req, res) => {
         .catch(error => res.status(404).json({success: false}));
 });
 
+router.get('/:id', (req, res) => {
+    House.findById(req.params.id)
+        .then(house => res.json(house));
+})
+
 module.exports = router;

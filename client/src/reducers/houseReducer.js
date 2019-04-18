@@ -1,4 +1,4 @@
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from '../actions/types';
+import { GET_ITEMS, GET_ITEM, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from '../actions/types';
 
 const initialState = {
     houses: [],
@@ -11,6 +11,12 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 houses: action.payload,
+                loading: false
+            }
+        case GET_ITEM:
+            return {
+                ...state,
+                houses: state.houses.filter(house => house._id === action.payload),
                 loading: false
             }
         case DELETE_ITEM:
